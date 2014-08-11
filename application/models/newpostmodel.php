@@ -30,18 +30,6 @@ class newpostmodel extends CI_Model{
 
 		$response = $this->storetemp($jsonString, $timestamp);
 
-		// echo '<br/><br/>';
-
-		// var_dump(spliti('/', $response));
-
-		// $pasteid = spliti('/', $response);
-
-		// // There will be four parts in a paste link.
-
-		// // Eg: http://pastebin.com/HC5nARnw
-
-		// $pasteid = $pasteid[3];
-
 		$tempid = $response;
 		$userid = $this->session->userdata('userid');
 		$status = 1;
@@ -70,12 +58,8 @@ class newpostmodel extends CI_Model{
 
 		$timestamp = md5($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
 
-		var_dump($timestamp);
-
-		// var_dump($this->session->all_userdata());
-
 		$fileLocation = $this->session->userdata('postloc').$timestamp.".txt";
-		// echo $fileLocation;
+		
 		$file = fopen($fileLocation,"wb");
 		
 		fwrite($file,$content);
