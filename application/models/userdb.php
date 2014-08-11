@@ -50,6 +50,7 @@ class userdb extends CI_Model{
 			'username' => $un,
 			'userid'=>$uid,
 			'privilege' => $privi,
+			'postloc'=>getenv("DOCUMENT_ROOT") . "/blog-draft/posts/"
 			);
 
 	}

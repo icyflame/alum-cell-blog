@@ -8,6 +8,8 @@ class newpostmodel extends CI_Model{
 
 		$this->load->database();
 
+		$this->load->library('session');
+
 	}
 
 	public function addNewPost(){
@@ -39,7 +41,7 @@ class newpostmodel extends CI_Model{
 		// // Eg: http://pastebin.com/HC5nARnw
 
 		// $pasteid = $pasteid[3];
-		
+
 		$tempid = $response;
 		$userid = $this->session->userdata('userid');
 		$status = 1;
@@ -66,8 +68,10 @@ class newpostmodel extends CI_Model{
 
 		$timestamp = time();
 
-		$fileLocation = getenv("DOCUMENT_ROOT") . "/blog-draft/posts/".$timestamp.".txt";
-		echo $fileLocation;
+		// var_dump($this->session->all_userdata());
+
+		$fileLocation = $this->session->userdata('postloc').$timestamp.".txt";
+		// echo $fileLocation;
 		$file = fopen($fileLocation,"wb");
 		
 		fwrite($file,$content);
