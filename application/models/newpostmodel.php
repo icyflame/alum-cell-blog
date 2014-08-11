@@ -26,19 +26,21 @@ class newpostmodel extends CI_Model{
 
 		echo $jsonString;
 
-		$response = $this->createnewpaste($jsonString, $timestamp);
+		$response = $this->storetemp($jsonString, $timestamp);
 
-		echo '<br/><br/>';
+		// echo '<br/><br/>';
 
-		var_dump(spliti('/', $response));
+		// var_dump(spliti('/', $response));
 
-		$pasteid = spliti('/', $response);
+		// $pasteid = spliti('/', $response);
 
-		// There will be four parts in a paste link.
+		// // There will be four parts in a paste link.
 
-		// Eg: http://pastebin.com/HC5nARnw
+		// // Eg: http://pastebin.com/HC5nARnw
 
-		$pasteid = $pasteid[3];
+		// $pasteid = $pasteid[3];
+		
+		$tempid = $response;
 		$userid = $this->session->userdata('userid');
 		$status = 1;
 
@@ -50,7 +52,7 @@ class newpostmodel extends CI_Model{
 
 		******/
 		
-		$query = "INSERT INTO `posts_temp`(`userid`, `pasteid`, `status`) values('$userid', '$pasteid', '$status')";
+		$query = "INSERT INTO `posts_temp`(`userid`, `tempid`, `status`) values('$userid', '$tempid', '$status')";
 
 		echo '<br/><br/>'.$query;
 
@@ -60,44 +62,54 @@ class newpostmodel extends CI_Model{
 
 	}
 
-	public function createnewpaste($content, $name){
+	public function storetemp($content, $name){
 
-		$ch = curl_init("http://pastebin.com/api/api_post.php");
+		$timestamp = time();
 
-		// directly from their API help page
+		$fileLocation = getenv("DOCUMENT_ROOT") . "/blog-draft/posts/".$timestamp.".txt";
+		echo $fileLocation;
+		$file = fopen($fileLocation,"wb");
+		
+		fwrite($file,$content);
+		fclose($file);
 
-		$api_dev_key 			= 'b4fb5dd493cf49565ebae3ccdeeb86e4'; // your api_developer_key
-		$api_paste_code 		= $content; // json encoded text
-		$api_paste_private 		= '0'; // 0=public 1=unlisted 2=private
-		$api_paste_name			= $name.'.txt'; // name or title of your paste
-		$api_paste_expire_date 		= '10M';
-		$api_paste_format 		= 'text';
-		$api_user_key 			= ''; // if an invalid api_user_key or no key is used, the paste will be create as a guest
-		$api_paste_name			= urlencode($api_paste_name);
-		$api_paste_code			= urlencode($api_paste_code);
+		return $timestamp;
 
-		$url 				= 'http://pastebin.com/api/api_post.php';
-		$ch 				= curl_init($url);
 
-		curl_setopt($ch, CURLOPT_POST, true);
-		curl_setopt($ch, CURLOPT_POSTFIELDS, 'api_option=paste&api_user_key='.$api_user_key.'&api_paste_private='.$api_paste_private.'&api_paste_name='.$api_paste_name.'&api_paste_expire_date='.$api_paste_expire_date.'&api_paste_format='.$api_paste_format.'&api_dev_key='.$api_dev_key.'&api_paste_code='.$api_paste_code.'');
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-		curl_setopt($ch, CURLOPT_VERBOSE, 1);
-		curl_setopt($ch, CURLOPT_NOBODY, 0);
+		// $ch = curl_init("http://pastebin.com/api/api_post.php");
 
-		$response  			= curl_exec($ch);
+		// // directly from their API help page
 
-		echo '<br/><br/>';
+		// $api_dev_key 			= 'b4fb5dd493cf49565ebae3ccdeeb86e4'; // your api_developer_key
+		// $api_paste_code 		= $content; // json encoded text
+		// $api_paste_private 		= '0'; // 0=public 1=unlisted 2=private
+		// $api_paste_name			= $name.'.txt'; // name or title of your paste
+		// $api_paste_expire_date 		= '10M';
+		// $api_paste_format 		= 'text';
+		// $api_user_key 			= ''; // if an invalid api_user_key or no key is used, the paste will be create as a guest
+		// $api_paste_name			= urlencode($api_paste_name);
+		// $api_paste_code			= urlencode($api_paste_code);
 
-		echo $response;
+		// $url 				= 'http://pastebin.com/api/api_post.php';
+		// $ch 				= curl_init($url);
 
-		echo '<br/><br/>';
+		// curl_setopt($ch, CURLOPT_POST, true);
+		// curl_setopt($ch, CURLOPT_POSTFIELDS, 'api_option=paste&api_user_key='.$api_user_key.'&api_paste_private='.$api_paste_private.'&api_paste_name='.$api_paste_name.'&api_paste_expire_date='.$api_paste_expire_date.'&api_paste_format='.$api_paste_format.'&api_dev_key='.$api_dev_key.'&api_paste_code='.$api_paste_code.'');
+		// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		// curl_setopt($ch, CURLOPT_VERBOSE, 1);
+		// curl_setopt($ch, CURLOPT_NOBODY, 0);
 
-		curl_close($ch);
+		// $response  			= curl_exec($ch);
+
+		// echo '<br/><br/>';
+
+		// echo $response;
+
+		// echo '<br/><br/>';
+
+		// curl_close($ch);
 
 		// return $response;
-
-		return "http://pastebin.com/HC5nARnw";
 
 	}
 }
