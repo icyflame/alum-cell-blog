@@ -23,7 +23,7 @@
 
 	<br/>
 
-	<input type="submit" value="Submit" class="btn btn-lg"></input>
+	<input type="submit" value="Submit" class="btn btn-primary btn-lg"></input>
 
 	</form>
 

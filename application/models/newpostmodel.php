@@ -34,11 +34,11 @@ class newpostmodel extends CI_Model{
 
 		$pasteid = spliti('/', $response);
 
-		// There will be three parts in a paste link.
+		// There will be four parts in a paste link.
 
 		// Eg: http://pastebin.com/HC5nARnw
 
-		$pasteid = $pasteid[2];
+		$pasteid = $pasteid[3];
 		$userid = $this->session->userdata('userid');
 		$status = 1;
 
@@ -50,7 +50,9 @@ class newpostmodel extends CI_Model{
 
 		******/
 		
-		$query = "INSERT INTO `posts_temp`(userid, pasteid, status) values('$pasteid', '$userid', '$status')";
+		$query = "INSERT INTO `posts_temp`(`userid`, `pasteid`, `status`) values('$userid', '$pasteid', '$status')";
+
+		echo '<br/><br/>'.$query;
 
 		if($res = $this->db->query($query))
 
@@ -93,7 +95,9 @@ class newpostmodel extends CI_Model{
 
 		curl_close($ch);
 
-		return $response;
+		// return $response;
+
+		return "http://pastebin.com/HC5nARnw";
 
 	}
 }
