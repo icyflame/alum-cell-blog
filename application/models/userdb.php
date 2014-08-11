@@ -11,7 +11,7 @@ class userdb extends CI_Model{
 		$username = $this->input->post('username');
 		$pwentered = $this->input->post('password');
 
-		$res = $this->db->query("SELECT password FROM users WHERE username='$username'");
+		$res = $this->db->query("SELECT password FROM users_blog WHERE username='$username'");
 
 		$pw = '';
 
@@ -34,7 +34,7 @@ class userdb extends CI_Model{
 		$username = $this->input->post('username');
 		$pwentered = $this->input->post('password');
 
-		$res = $this->db->query("SELECT * FROM users WHERE username='$username'");
+		$res = $this->db->query("SELECT * FROM users_blog WHERE username='$username'");
 
 		$pw = '';
 
@@ -61,7 +61,7 @@ class userdb extends CI_Model{
 			return 'unknown';
 
 		else{
-			$res = $this->db->query("SELECT username FROM users WHERE userid='$userid'");
+			$res = $this->db->query("SELECT username FROM users_blog WHERE userid='$userid'");
 
 			$d = $res->result_array();
 

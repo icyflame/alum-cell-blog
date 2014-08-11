@@ -48,10 +48,27 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+/***********
+
+icyflame.comli.com/blog-draft
+
+$db['default']['hostname'] = 'mysql6.000webhost.com';
+$db['default']['username'] = 'a7739511_sid';
+$db['default']['password'] = 'dbtest123';
+$db['default']['database'] = 'a7739511_sid';
+
+************/
+
+/*********
+
+localhost
+
+**********/
+
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'sid';
 $db['default']['password'] = '';
-$db['default']['database'] = 'erp';
+$db['default']['database'] = 'blog_db';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
