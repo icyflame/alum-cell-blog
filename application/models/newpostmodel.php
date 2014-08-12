@@ -56,7 +56,7 @@ class newpostmodel extends CI_Model{
 
 		// to ensure that the name of the file is unique
 
-		$timestamp = md5($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
+		$timestamp = sha1($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
 
 		$fileLocation = $this->session->userdata('postloc').$timestamp.".txt";
 		
