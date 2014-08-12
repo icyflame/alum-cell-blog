@@ -20,17 +20,15 @@ class newpostmodel extends CI_Model{
 
 		echo '<br/><br/>';
 
-		$timestamp = time();
-
-		$finaldata = array_merge($_POST, array("time"=>$timestamp));
+		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y')));
 
 		$jsonString = json_encode($finaldata);
 
 		echo $jsonString;
 
-		$response = $this->storetemp($jsonString, $timestamp);
+		$filename = $this->storetemp($jsonString);
 
-		$tempid = $response;
+		$tempid = $filename;
 		$userid = $this->session->userdata('userid');
 		$status = 1;
 
@@ -52,20 +50,20 @@ class newpostmodel extends CI_Model{
 
 	}
 
-	public function storetemp($content, $name){
+	public function storetemp($content){
 
 		// to ensure that the name of the file is unique
 
-		$timestamp = sha1($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
+		$filename = sha1($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
 
-		$fileLocation = $this->session->userdata('postloc').$timestamp.".txt";
+		$fileLocation = $this->session->userdata('postloc').$filename.".txt";
 		
 		$file = fopen($fileLocation,"wb");
 		
 		fwrite($file,$content);
 		fclose($file);
 
-		return $timestamp;
+		return $filename;
 
 	}
 }

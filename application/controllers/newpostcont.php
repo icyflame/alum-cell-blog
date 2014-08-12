@@ -24,7 +24,7 @@ class newpostcont extends CI_Controller{
 		$this->load->library('form_validation');
 
 		$this->load->view('templates/header.html');
-		$this->load->view('newpost.php');
+		$this->load->view('newpost/newpost.php');
 		$this->load->view('templates/footer.html');
 	}
 
