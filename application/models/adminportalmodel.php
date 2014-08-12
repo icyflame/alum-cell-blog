@@ -22,13 +22,25 @@ class adminportalmodel extends CI_Model{
 
 		echo '<br/><br/>';
 
-		var_dump($res);
+		// var_dump($res);
 
 		return $res;
 	}
 
 	public function postData($postid){
-		return;
+		
+		$query = "select * from `posts_temp` where `postid`='$postid'"; // get all the posts that are awaiting moderation
+
+		$res = $this->db->query($query);
+
+		$res = $res->result_array();
+
+		echo '<br/><br/>';
+
+		// var_dump($res);
+
+		return $res[0];
+
 	}
 }
 

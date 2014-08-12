@@ -48,4 +48,58 @@ class adminportalcont extends CI_Controller{
 		$this->load->view('templates/footer.html');
 
 	}
+
+	public function showPost($postid){
+
+		$data = $this->adminportalmodel->postData($postid);
+
+		// var_dump($data);
+
+		$filename = $data['tempid'].'.txt';
+
+		$filepath = $this->session->userdata('postloc').$filename;
+
+		echo '<br/><br/>File location: '.$this->session->userdata('postloc').$filename.'<br/><br/>';
+
+		if(file_exists($filepath)){
+
+			$output_arr = file($filepath);
+
+			$output_arr = $output_arr[0];
+
+			echo '<br/><br/>Json Decoded array:<br/><br/>';
+
+			$decodedString = json_decode($output_arr, true); // convert the Json encoded string to an array
+
+			var_dump($decodedString);
+
+			echo $decodedString['postcontent'];
+
+			// $postArr = array_values($decodedString);
+
+			// var_dump($postArr);
+
+			// var_dump($output_arr);
+
+			$final_data = $decodedString;
+
+			$this->load->view('templates/header.html');
+			$this->load->view('admin/adminpostview.php', $final_data);
+			$this->load->view('templates/footer.html');
+
+		}
+
+		else{
+
+			echo "The post can't be found. Contact site admin.";
+
+		}
+
+		// $fp = fopen($this->session->userdata('postloc').$filename, 'r');
+
+		// echo fread($fp);
+
+		
+
+	}
 }
