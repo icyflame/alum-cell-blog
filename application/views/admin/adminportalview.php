@@ -46,7 +46,7 @@
 				</td>
 
 				<td style="text-align: center; ">
-					<a href="#">
+					<a href="<?php echo site_url('adminportalcont/showpost/'.$row['postid']); ?>">
 						<button class="btn btn-primary">
 							View Post
 						</button>

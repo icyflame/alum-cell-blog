@@ -81,7 +81,7 @@ class adminportalcont extends CI_Controller{
 
 			// var_dump($output_arr);
 
-			$final_data = $decodedString;
+			$final_data = array('data'=>$decodedString);
 
 			$this->load->view('templates/header.html');
 			$this->load->view('admin/adminpostview.php', $final_data);

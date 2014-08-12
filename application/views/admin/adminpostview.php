@@ -12,52 +12,27 @@
 
 	<div style="text-align: center;">
 
-		<h1> Post ID </h1>
+		<h1> Unmoderated post </h1>
 
 	</div>
 
-	<!-- <table class="table table-bordered table-striped">
+	<h3>
+		Posted on <?php echo $data['time']; ?>
+	</h3>
 
-		<thead>
+	<h3>
+		Posted by <?php echo $data['screenname']; ?>
+	</h3>
 
-			<th>Post ID</th>
-			<th>User ID</th>
-			<th>Time</th>
-			<th></th>
+	<h3>
+		Post content: <br/>
+	</h3>
 
-		</thead>
+	<div>
 
-		<tbody>
+		<?php echo $data['postcontent']; ?>
 
-			<?php foreach($data as $row): ?>
-
-			<tr>
-
-				<td>
-					<?php echo $row['postid']; ?>
-				</td>
-
-				<td>
-					<?php echo $row['userid']; ?>
-				</td>
-
-				<td>
-					<?php echo $row['time']; ?>
-				</td>
-
-				<td style="text-align: center; ">
-					<a href="#">
-						<button class="btn btn-primary">
-							View Post
-						</button>
-					</a>
-				</td>
-
-			</tr>
-
-		<?php endforeach; ?>
-
-	</tbody> -->
+	</div>
 
 </table>
 
