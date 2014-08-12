@@ -53,6 +53,11 @@ else{
 
 	<ul class="nav nav-pills" style="float: right !important">
 		<li><a href="<?php echo site_url('newpostcont/'); ?>">New Post</a></li>
+
+		<?php if($this->session->userdata('privilege') < $this->session->userdata('threshpriv')): ?>
+		<li><a href="<?php echo site_url('adminportalcont/'); ?>">Admin Portal</a></li>
+	<?php endif ?>
+
 		<li><a href="<?php echo site_url('auth/logout'); ?>">Logout</a></li>
 		<li><a href="#"></a></li>
 	</ul>

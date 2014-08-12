@@ -17,7 +17,7 @@ class adminportalcont extends CI_Controller{
 
 		$threshPriv = $this->session->userdata('threshpriv');
 
-		if($this->session->userdata('privi') < $threshPriv)
+		if($this->session->userdata('privilege') < $threshPriv)
 
 			$this->showHome();
 
