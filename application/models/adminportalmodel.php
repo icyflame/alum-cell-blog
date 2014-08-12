@@ -43,13 +43,11 @@ class adminportalmodel extends CI_Model{
 
 	}
 
-	public function editpost($postid, $status){
+	public function editstatus($postid, $status){
 
 		$query = "update posts_temp set status='$status' where postid='$postid'"; // get all the posts that are awaiting moderation
 
-		$res = $this->db->query($query);
-
-		if($res = $res->result_array())
+		if($res = $this->db->query($query))
 
 			echo '<br/><br/>Status changed successfully.';
 

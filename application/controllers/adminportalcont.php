@@ -105,7 +105,7 @@ class adminportalcont extends CI_Controller{
 
 	public function editstatus($postid, $status){
 
-
+		$this->adminportalmodel->editstatus($postid, $status);
 
 	}
 }

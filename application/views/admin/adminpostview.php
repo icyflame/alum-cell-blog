@@ -36,11 +36,15 @@
 
 	<h3> Edit the status of this post </h3>
 
-	<ul class="nav nav-pills" style="float: right !important">
-		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$data['postid'].'/2'); ?>">Reject</a></li>
-		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$data['postid'].'/3'); ?>">Approve</a></li>
+	<ul class="nav nav-pills">
+
+		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$postid.'/3'); ?>">Approve</a></li>
+		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$postid.'/2'); ?>">Reject</a></li>
+		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$postid.'/1'); ?>">Unmoderated</a></li>
 
 	</ul>
+
+	<h4> If you select Approve, the post will be shown on the blog. If you select Reject, the post will be marked as "Moderated, Further feedback required.". If you select Unmoderated, the status of the post will not be changed, and another admin, or you, at a later time, can approve or reject it </h4>
 
 </table>
 
