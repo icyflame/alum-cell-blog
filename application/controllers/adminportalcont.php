@@ -27,6 +27,8 @@ class adminportalcont extends CI_Controller{
 
 			echo "<h2>You don't have the privileges to view this page. Contact Site Admin, if you think you should have privileges.</h2>";
 
+			var_dump($this->session->all_userdata());
+			
 			echo $this->load->view('templates/footer.html', array(), TRUE);
 
 			die;
@@ -42,7 +44,7 @@ class adminportalcont extends CI_Controller{
 		$final_data = array('data'=>$data);
 
 		$this->load->view('templates/header.html');
-		$this->load->view('adminportalview.php', $final_data);
+		$this->load->view('admin/adminportalview.php', $final_data);
 		$this->load->view('templates/footer.html');
 
 	}
