@@ -83,6 +83,8 @@ class adminportalcont extends CI_Controller{
 
 			$final_data = array('data'=>$decodedString);
 
+			$final_data = array_merge($final_data, array('postid'=>$postid));
+
 			$this->load->view('templates/header.html');
 			$this->load->view('admin/adminpostview.php', $final_data);
 			$this->load->view('templates/footer.html');
@@ -97,9 +99,13 @@ class adminportalcont extends CI_Controller{
 
 		// $fp = fopen($this->session->userdata('postloc').$filename, 'r');
 
-		// echo fread($fp);
+		// echo fread($fp);		
 
-		
+	}
+
+	public function editstatus($postid, $status){
+
+
 
 	}
 }

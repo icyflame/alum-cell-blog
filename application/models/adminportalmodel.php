@@ -20,7 +20,7 @@ class adminportalmodel extends CI_Model{
 
 		$res = $res->result_array();
 
-		echo '<br/><br/>';
+		// echo '<br/><br/>';
 
 		// var_dump($res);
 
@@ -35,11 +35,27 @@ class adminportalmodel extends CI_Model{
 
 		$res = $res->result_array();
 
-		echo '<br/><br/>';
+		// echo '<br/><br/>';
 
 		// var_dump($res);
 
 		return $res[0];
+
+	}
+
+	public function editpost($postid, $status){
+
+		$query = "update posts_temp set status='$status' where postid='$postid'"; // get all the posts that are awaiting moderation
+
+		$res = $this->db->query($query);
+
+		if($res = $res->result_array())
+
+			echo '<br/><br/>Status changed successfully.';
+
+		else
+
+			echo '<br/><br/>Query did not complete successfully.';
 
 	}
 }

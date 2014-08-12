@@ -34,6 +34,14 @@
 
 	</div>
 
+	<h3> Edit the status of this post </h3>
+
+	<ul class="nav nav-pills" style="float: right !important">
+		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$data['postid'].'/2'); ?>">Reject</a></li>
+		<li><a href="<?php echo site_url('adminportalcont/editstatus/'.$data['postid'].'/3'); ?>">Approve</a></li>
+
+	</ul>
+
 </table>
 
 </body>
