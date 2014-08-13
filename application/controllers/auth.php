@@ -19,12 +19,12 @@ class auth extends CI_Controller{
 
 		if(isset($_SESSION['loggedin'])){
 
-			$url = site_url('newpostcont/');
-
-			header("Refresh:0, url='$url'");
+			redirect('blogcont/', 'refresh');
 		}
 
 		else{
+
+			echo "<h3>Access Denied. Try Again.</h3>"
 
 			$this->loginval();
 
@@ -65,9 +65,7 @@ class auth extends CI_Controller{
 
 				// $this->load->view('authentication/viewstat', $data);
 
-				$url = site_url('newpostcont/');
-
-				header("Refresh:0, url='$url'");
+				redirect('blogcont/', 'refresh');
 
 			}
 
@@ -79,8 +77,6 @@ class auth extends CI_Controller{
 
 			}
 
-			// $this->load->view('viewstat', $data);
-
 		}
 
 	}
@@ -91,7 +87,7 @@ class auth extends CI_Controller{
 
 		unset($_SESSION['loggedin']);
 
-		$this->loginval();
+		redirect('blogcont/', 'refresh');
 	}
 
 }
