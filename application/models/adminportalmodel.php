@@ -20,10 +20,6 @@ class adminportalmodel extends CI_Model{
 
 		$res = $res->result_array();
 
-		// echo '<br/><br/>';
-
-		// var_dump($res);
-
 		return $res;
 	}
 
