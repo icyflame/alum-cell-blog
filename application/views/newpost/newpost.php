@@ -15,7 +15,7 @@
 
 	<?php echo form_open('newpostcont/addpost') ?>
 
-	<input type="text" class="form-control" name="screenname" placeholder="Screen name"></input>
+	<input type="text" class="form-control" name="screenname" placeholder="Screen name" value="<?php echo $this->session->userdata('fullname'); ?>"></input>
 
 	<br/>
 
