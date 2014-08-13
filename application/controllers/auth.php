@@ -24,7 +24,7 @@ class auth extends CI_Controller{
 
 		else{
 
-			echo "<h3>Access Denied. Try Again.</h3>"
+			echo "<h3>Access Denied. Try Again.</h3>";
 
 			$this->loginval();
 
