@@ -15,7 +15,7 @@ class blogcont extends CI_Controller{
 
 	public function index(){
 
-		$data = $this->adminportalmodel->homeData(1); // get all the posts that have been approved.
+		$data = $this->adminportalmodel->homeData(3); // get all the posts that have been approved.
 
 		$c = 0;
 
