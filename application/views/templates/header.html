@@ -2,39 +2,49 @@
 
 session_start();
 
-if(!isset($_SESSION['loggedin'])){
+$loggedin = true;
 
-	$url = site_url('auth/');
+if(uri_string() == 'blogcont'){
+	if(!isset($_SESSION['loggedin']))
 
-	// echo 'Not logged in.';
+		$loggedin = false;
 
-	Header("Refresh:0, url='$url'");
-	die;
 }
 
 else{
 
-	$timeout = 600;
+	if(!isset($_SESSION['loggedin'])){
 
-	$duration = time() - (int)$_SESSION['time'];
+		$loggedin = false;
 
-	if($duration > $timeout){
+		redirect('blogcont/', 'refresh');
 
-		unset($_SESSION['loggedin']);
-		$url = site_url('auth/');
-
-	// echo 'Not logged in.';
-
-		echo '<h1> Session timed out. </h1>';
-
-		Header("Refresh:2, url='$url'");
-		die;
 	}
 
 	else{
 
-		$_SESSION['time'] = time();
+		$timeout = 600;
+
+		$duration = time() - (int)$_SESSION['time'];
+
+		if($duration > $timeout){
+
+			unset($_SESSION['loggedin']);
+
+			$loggedin = false;
+
+			echo '<h1> Session timed out. </h1>';
+
+			redirect('blogcont/', 'refresh');
+			die;
+		}
+
+		else{
+
+			$_SESSION['time'] = time();
+		}
 	}
+
 }
 
 ?>
@@ -49,18 +59,43 @@ else{
 
 <div class="container" style="margin-left: 20px; margin-right: 20px; color: #777">
 
-	<h4 style="float: left !important">Blog Portal ( Logged in as <?php echo $this->session->userdata('username') ?>) </h4>
+	<?php if($loggedin): ?>
 
-	<ul class="nav nav-pills" style="float: right !important">
-		<li><a href="<?php echo site_url('newpostcont/'); ?>">New Post</a></li>
+	<h4 style="float: left !important">Create Together ( Logged in as <?php echo $this->session->userdata('username') ?>) </h4>
 
-		<?php if($this->session->userdata('privilege') < $this->session->userdata('threshpriv')): ?>
-		<li><a href="<?php echo site_url('adminportalcont/'); ?>">Admin Portal</a></li>
-	<?php endif ?>
+<?php else: ?>
 
-		<li><a href="<?php echo site_url('auth/logout'); ?>">Logout</a></li>
-		<li><a href="#"></a></li>
-	</ul>
+	<h4 style="float: left !important">Create Together</h4>
+
+<?php endif; ?>
+
+<ul class="nav nav-pills" style="float: right !important">
+
+	<li><a href="<?php echo site_url('blogcont/'); ?>">Blog</a></li>
+
+	<?php if($loggedin): ?>
+
+	<li><a href="<?php echo site_url('newpostcont/'); ?>">New Post</a></li>
+
+<?php endif; ?>
+
+<?php if($this->session->userdata('privilege') < $this->session->userdata('threshpriv')): ?>
+
+	<li><a href="<?php echo site_url('adminportalcont/'); ?>">Admin Portal</a></li>
+
+<?php endif ?>
+
+<?php if($loggedin): ?>
+
+	<li><a href="<?php echo site_url('auth/logout'); ?>">Logout</a></li>
+
+<?php else: ?>
+
+	<li><a href="<?php echo site_url('auth/'); ?>">Login</a></li>
+
+<?php endif; ?>
+
+</ul>
 
 </div>
 

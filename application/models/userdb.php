@@ -43,6 +43,7 @@ class userdb extends CI_Model{
 			$privi = $row->privilege;
 			$un = $row->username;
 			$uid = $row->userid;
+			$fullname = $row->name;
 
 		}
 
@@ -50,7 +51,7 @@ class userdb extends CI_Model{
 			'username' => $un,
 			'userid'=>$uid,
 			'privilege' => $privi,
-			'postloc'=>getenv("DOCUMENT_ROOT") . "/blog-draft/posts/", // the folder where the posts are stored
+			'fullname'=>$fullname,
 			'threshpriv'=>4, // if privilege value is below this then the user has admin privileges
 			);
 

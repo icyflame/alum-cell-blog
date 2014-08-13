@@ -25,6 +25,17 @@
 	</h3>
 
 	<h3>
+
+		Post title: <br/>
+
+	</h3>
+
+	<h4>
+		<?php echo $data['posttitle']; ?>
+
+	</h4>
+
+	<h3>
 		Post content: <br/>
 	</h3>
 
