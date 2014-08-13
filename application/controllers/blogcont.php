@@ -19,6 +19,8 @@ class blogcont extends CI_Controller{
 
 		$c = 0;
 
+		echo count($data).' posts found.';
+
 		$final_data = array();
 
 		foreach($data as $post){
