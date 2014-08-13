@@ -14,7 +14,7 @@ class adminportalmodel extends CI_Model{
 
 	public function homeData($status_param=1){
 
-		$query = "select * from `posts_temp` where `status`='$status_param'"; // get all the posts that are awaiting moderation
+		$query = "select * from `posts_temp` where `status`='$status_param' order by `postid` desc"; // get all the posts that are awaiting moderation
 
 		$res = $this->db->query($query);
 
