@@ -10,8 +10,6 @@ class blogcont extends CI_Controller{
 
 		$this->load->helper('url');
 
-		$this->load->model('blogfullmodel');
-
 		$this->load->model('adminportalmodel');
 	}
 
@@ -54,6 +52,7 @@ class blogcont extends CI_Controller{
 			else{
 
 				echo "The file does not exist. Contact site admin.";
+				echo " File we were looking for: ".$filepath.'<br/><br/>';
 			}
 
 		}
