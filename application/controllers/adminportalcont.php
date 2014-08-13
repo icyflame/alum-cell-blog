@@ -59,7 +59,7 @@ class adminportalcont extends CI_Controller{
 
 		$filepath = $this->session->userdata('postloc').$filename;
 
-		echo '<br/><br/>File location: '.$this->session->userdata('postloc').$filename.'<br/><br/>';
+		// echo '<br/><br/>File location: '.$this->session->userdata('postloc').$filename.'<br/><br/>';
 
 		if(file_exists($filepath)){
 
@@ -67,7 +67,7 @@ class adminportalcont extends CI_Controller{
 
 			$output_arr = $output_arr[0];
 
-			echo '<br/><br/>Json Decoded array:<br/><br/>';
+			// echo '<br/><br/>Json Decoded array:<br/><br/>';
 
 			$decodedString = json_decode($output_arr, true); // convert the Json encoded string to an array
 
@@ -99,7 +99,7 @@ class adminportalcont extends CI_Controller{
 
 		// $fp = fopen($this->session->userdata('postloc').$filename, 'r');
 
-		// echo fread($fp);		
+		// echo fread($fp);
 
 	}
 
