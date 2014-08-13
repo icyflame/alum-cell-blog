@@ -31,7 +31,7 @@ class blogcont extends CI_Controller{
 
 			$filename = $data['tempid'].'.txt';
 
-			$filepath = $this->session->userdata('postloc').$filename;
+			$filepath = POSTS_LOCATION.$filename;
 
 			if(file_exists($filepath)){
 

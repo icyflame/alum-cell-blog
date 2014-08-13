@@ -57,9 +57,7 @@ class adminportalcont extends CI_Controller{
 
 		$filename = $data['tempid'].'.txt';
 
-		$filepath = $this->session->userdata('postloc').$filename;
-
-		// echo '<br/><br/>File location: '.$this->session->userdata('postloc').$filename.'<br/><br/>';
+		$filepath = POSTS_LOCATION.$filename;
 
 		if(file_exists($filepath)){
 
@@ -96,10 +94,6 @@ class adminportalcont extends CI_Controller{
 			echo "The post can't be found. Contact site admin.";
 
 		}
-
-		// $fp = fopen($this->session->userdata('postloc').$filename, 'r');
-
-		// echo fread($fp);
 
 	}
 
