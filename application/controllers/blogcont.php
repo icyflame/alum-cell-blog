@@ -29,7 +29,7 @@ class blogcont extends CI_Controller{
 			
 			$data = $this->adminportalmodel->postData($postid);
 
-			$filename = $data['tempid'].'.txt';
+			$filename = $data['tempid'].'.cms';
 
 			$filepath = POSTS_LOCATION.$filename;
 

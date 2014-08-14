@@ -55,7 +55,7 @@ class adminportalcont extends CI_Controller{
 
 		// var_dump($data);
 
-		$filename = $data['tempid'].'.txt';
+		$filename = $data['tempid'].'.cms';
 
 		$filepath = POSTS_LOCATION.$filename;
 

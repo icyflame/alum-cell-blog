@@ -56,7 +56,7 @@ class newpostmodel extends CI_Model{
 
 		$filename = sha1($this->session->userdata('userid') + urlencode(microtime(true) * 10000));
 
-		$fileLocation = POSTS_LOCATION.$filename.".txt";
+		$fileLocation = POSTS_LOCATION.$filename.".cms";
 		
 		$file = fopen($fileLocation,"wb");
 		
