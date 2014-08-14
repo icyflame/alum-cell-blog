@@ -61,6 +61,21 @@ $db['default']['database'] = 'a7739511_sid';
 
 /*********
 
+yecindia.com/testing/blog-draft : GoDaddy.com
+
+**********/
+
+/*
+
+$db['default']['hostname'] = '166.62.8.13';
+$db['default']['username'] = 'testlearndo';
+$db['default']['password'] = 'Person%45';
+$db['default']['database'] = 'testlearndo';
+
+*/
+
+/*********
+
 localhost
 
 **********/
@@ -69,6 +84,9 @@ $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'sid';
 $db['default']['password'] = '';
 $db['default']['database'] = 'blog_db';
+
+
+
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
