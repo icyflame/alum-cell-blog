@@ -10,7 +10,7 @@ class newpostcont extends CI_Controller{
 
 		$this->load->helper('url');
 
-		$this->load->model('newpostmodel');
+	
 	}
 
 	public function index(){
@@ -31,7 +31,7 @@ class newpostcont extends CI_Controller{
 	public function addpost(){
 
 		echo 'We will talk with the model now.';
-
+		$this->load->model('newpostmodel');
 		$this->newpostmodel->addNewPost();
 
 	}
