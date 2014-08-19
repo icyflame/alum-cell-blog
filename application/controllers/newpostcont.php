@@ -18,7 +18,7 @@ class newpostcont extends CI_Controller{
 		$this->write();
 	}
 
-	public function write(){
+	private function write(){
 
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -28,7 +28,7 @@ class newpostcont extends CI_Controller{
 		$this->load->view('templates/footer.html');
 	}
 
-	public function addpost(){
+	private function addpost(){
 
 		echo 'We will talk with the model now.';
 		$this->load->model('newpostmodel');
