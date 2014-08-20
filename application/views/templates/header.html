@@ -6,10 +6,14 @@ date_default_timezone_set('Asia/Kolkata');
 
 $loggedin = true;
 
-if(uri_string() == 'blogcont'){
+if(strpos(uri_string(), 'blogcont') !== FALSE){
 	if(!isset($_SESSION['loggedin']))
 
 		$loggedin = false;
+
+	else
+
+		$_SESSION['time'] = time();
 
 }
 
