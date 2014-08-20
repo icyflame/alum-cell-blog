@@ -1,2 +1,3 @@
 posts/*
 *.zip
+application/config/database.php
