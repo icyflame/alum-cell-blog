@@ -2,8 +2,10 @@
 
 <head>
 
+
 	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
 	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bodymargin.css'; ?>">
+	<script src="<?php echo base_url().'bootstrap/jquery-1.10.2.js'; ?>"></script>
 	<script src="<?php echo base_url().'bootstrap/bootstrap.min.js'; ?>"></script>
 
 </head>
