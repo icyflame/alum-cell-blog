@@ -20,7 +20,7 @@ class newpostmodel extends CI_Model{
 
 		echo '<br/><br/>';
 
-		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y')));
+		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y, e')));
 
 		$jsonString = json_encode($finaldata);
 
