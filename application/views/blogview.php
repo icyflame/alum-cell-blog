@@ -16,7 +16,7 @@
 
 	<h4> Posted by <?= $post['screenname'] ?> at <?= $post['time'] ?> </h4>
 
-	<p> <?= $post['postcontent'] ?> </p>
+	<p> <?= auto_link($post['postcontent']); ?> </p>
 
 	<hr/>
 
