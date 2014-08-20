@@ -29,7 +29,8 @@ class newpostcont extends CI_Controller{
 	}
 
 	public function addpost(){
-
+		$this->load->model('newpostmodel');
+		
 		echo 'We will talk with the model now.';
 
 		$this->newpostmodel->addNewPost();
