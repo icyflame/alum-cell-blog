@@ -32,7 +32,7 @@ class registration extends CI_Controller{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('username','Username','trim|required|xss_clean|min_length[4]');
+		$this->form_validation->set_rules('username','Username','trim|required|xss_clean|min_length[4]|is_unique[users_blog.username]');
 		$this->form_validation->set_rules('password','Password','trim|required|md5|min_length[4]');
 		$this->form_validation->set_rules('name','Name','trim|required');
 		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
@@ -53,14 +53,6 @@ class registration extends CI_Controller{
 			echo 'Form validated.';
 
 			var_dump($_POST);
-
-			// if($this->userdb->checkusername($username))
-
-			// 	echo "We will talk with the model now.";
-
-			// else
-
-			// 	echo "That username has been taken by someone already, please select a different one.";
 			
 		}
 	}
