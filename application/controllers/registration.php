@@ -32,11 +32,13 @@ class registration extends CI_Controller{
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 
-		$this->form_validation->set_rules('username','Username','trim|required|xss_clean|min_length[4]|is_unique[users_blog.username]');
+		$this->form_validation->set_rules('username', "That username is taken",'trim|required|xss_clean|min_length[4]|is_unique[users_blog.username]');
 		$this->form_validation->set_rules('password','Password','trim|required|md5|min_length[4]');
 		$this->form_validation->set_rules('name','Name','trim|required');
-		$this->form_validation->set_rules('email','Email','trim|required|valid_email');
+		$this->form_validation->set_rules('email', "That Email ID is already registered." ,'trim|required|valid_email|is_unique[users_blog.email]');
 		$this->form_validation->set_rules('repassword','Confirm Password','trim|required|matches[password]');
+
+		$this->form_validation->set_message('is_unique', "%s");
 
 		if ($this->form_validation->run() == FALSE)
 		{	
