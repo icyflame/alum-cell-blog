@@ -32,7 +32,14 @@ class newpostcont extends CI_Controller{
 
 		echo 'We will talk with the model now.';
 
-		$this->newpostmodel->addNewPost();
+		if($this->newpostmodel->addNewPost()){
+
+			echo "<script>alert('The blog post was added. One of our administrators will verify it, after which the	post will be shown online.')</script>";
+
+			redirect('blogcont/', 'refresh');
+
+		}
+
 
 	}
 }
