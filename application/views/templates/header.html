@@ -2,9 +2,19 @@
 
 session_start();
 
+date_default_timezone_set('Asia/Kolkata');
+
 $loggedin = true;
 
 if(uri_string() == 'blogcont'){
+	if(!isset($_SESSION['loggedin']))
+
+		$loggedin = false;
+
+}
+
+elseif(strpos(uri_string(), 'registration') !== FALSE){
+
 	if(!isset($_SESSION['loggedin']))
 
 		$loggedin = false;
@@ -92,6 +102,7 @@ else{
 <?php else: ?>
 
 	<li><a href="<?php echo site_url('auth/'); ?>">Login</a></li>
+	<li><a href="<?php echo site_url('registration/'); ?>">Register</a></li>
 
 <?php endif; ?>
 

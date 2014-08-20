@@ -19,9 +19,10 @@ class newpostmodel extends CI_Model{
 		var_dump($_POST);
 
 		echo '<br/><br/>';
-		date_default_timezone_set('Asia/Calcutta');
 
-		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y')));
+		date_default_timezone_set('Asia/Kolkata');
+
+		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y, e')));
 
 		$jsonString = json_encode($finaldata);
 
@@ -48,6 +49,8 @@ class newpostmodel extends CI_Model{
 		if($res = $this->db->query($query))
 
 			echo '<br/><br/>Temp Insert Query executed successfully<br/><br/>';
+
+		return true;
 
 	}
 

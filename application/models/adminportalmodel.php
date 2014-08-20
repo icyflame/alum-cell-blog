@@ -41,11 +41,11 @@ class adminportalmodel extends CI_Model{
 
 		if($res = $this->db->query($query))
 
-			echo '<br/><br/>Status changed successfully.';
+			return true;
 
 		else
 
-			echo '<br/><br/>Query did not complete successfully.';
+			return false;
 
 	}
 }

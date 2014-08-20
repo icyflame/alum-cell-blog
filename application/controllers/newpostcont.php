@@ -10,7 +10,7 @@ class newpostcont extends CI_Controller{
 
 		$this->load->helper('url');
 
-	
+
 	}
 
 	public function index(){
@@ -31,10 +31,20 @@ class newpostcont extends CI_Controller{
 
 	private function addpost(){
 
+		if($this->newpostmodel->addNewPost()){
 
-		echo 'We will talk with the model now.';
-		$this->load->model('newpostmodel');
-		$this->newpostmodel->addNewPost();
+			echo "<script>alert('The blog post was added. One of our administrators will verify it, after which the	post will be shown online.')</script>";
 
+			redirect('blogcont/', 'refresh');
+
+		}
+
+		else{
+
+			echo "<script>alert('Something's not right. Your post could not be added. Please try again after some time. Redirecting you to the add post page.')</script>";
+
+			redirect('newpostcont/', 'refresh');
+
+		}
 	}
 }
