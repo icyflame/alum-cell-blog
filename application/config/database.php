@@ -81,8 +81,8 @@ localhost
 **********/
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'sid';
-$db['default']['password'] = '';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'rmmr';
 $db['default']['database'] = 'blog_db';
 
 

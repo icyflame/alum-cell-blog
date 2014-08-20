@@ -20,7 +20,7 @@
 	<input type="text" class="form-control" name="screenname" placeholder="Screen name" value="<?php echo $this->session->userdata('fullname'); ?>" disabled></input>
 	<br/>
 
-	<input type="text" class="form-control" name="datetime" placeholder="Current date and time" value="<?php echo date("H:i jS F, Y"); ?>" disabled></input>
+	<input type="text" class="form-control" name="datetime" placeholder="Current date and time" value="<?php date_default_timezone_set('Asia/Calcutta'); echo date("H:i jS F, Y"); ?>" disabled></input>
 	<br/>
 
 	<input type="text" class="form-control" name="posttitle" placeholder="Post Title"></input>
