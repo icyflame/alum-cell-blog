@@ -54,7 +54,18 @@ class registration extends CI_Controller{
 
 			echo 'Form validated.';
 
-			var_dump($_POST);
+			if($this->userdb->registernewuser()){
+				echo "<script>alert('Your account has been created. Currently, you have only viewing and posting privileges. If you believe that you should have administrator access, contact the site administrator.')</script>";
+
+				redirect('blogcont/', 'refresh');
+			}
+
+			else{
+				echo "<script>alert('Something's not right. We were unable to create your account. Please try again some other time.')</script>";
+
+				redirect('registration/', 'refresh');
+			}
+
 			
 		}
 	}

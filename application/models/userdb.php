@@ -72,6 +72,29 @@ class userdb extends CI_Model{
 		}
 	}
 
+	public function registernewuser(){
+
+		var_dump($_POST);
+
+		$username = $_POST['username'];
+		$password = $_POST['password'];
+		$email = $_POST['email'];
+		$name = $_POST['name'];
+
+		$query = "INSERT INTO `users_blog`(`name`, `username`, `password`, `email`) VALUES ('$name', '$username', '$password', '$email')";
+
+		$res = $this->db->query($query);
+
+		if($res)
+
+			return true;
+
+		else
+
+			return false;
+
+	}
+
 }
 
 ?>
