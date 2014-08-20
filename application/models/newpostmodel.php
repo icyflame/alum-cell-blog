@@ -19,7 +19,6 @@ class newpostmodel extends CI_Model{
 		var_dump($_POST);
 
 		echo '<br/><br/>';
-		date_default_timezone_set('Asia/Calcutta');
 
 		date_default_timezone_set('Asia/Kolkata');
 
