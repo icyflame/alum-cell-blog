@@ -15,6 +15,12 @@ class blogcont extends CI_Controller{
 
 	public function index(){
 
+		$this->showall();
+
+	}
+
+	public function showall($hashtag=''){
+
 		$data = $this->adminportalmodel->homeData(3); // get all the posts that have been approved.
 
 		$c = 0;
@@ -59,7 +65,8 @@ class blogcont extends CI_Controller{
 
 		}
 
-		$data_send = array('data'=>$final_data);
+		$data_send = array('data'=>$final_data,
+			'hashtag'=>$hashtag);
 
 		$this->load->view('templates/header.html');
 		$this->load->view('blogview.php', $data_send);
