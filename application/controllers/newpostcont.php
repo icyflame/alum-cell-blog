@@ -28,7 +28,9 @@ class newpostcont extends CI_Controller{
 		$this->load->view('templates/footer.html');
 	}
 
+
 	private function addpost(){
+
 
 		echo 'We will talk with the model now.';
 		$this->load->model('newpostmodel');
