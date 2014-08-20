@@ -65,7 +65,6 @@ class registration extends CI_Controller{
 
 				redirect('registration/', 'refresh');
 			}
-
 			
 		}
 	}
