@@ -99,7 +99,20 @@ class adminportalcont extends CI_Controller{
 
 	public function editstatus($postid, $status){
 
-		$this->adminportalmodel->editstatus($postid, $status);
+		if($this->adminportalmodel->editstatus($postid, $status)){
+
+			echo "<script>alert('Status changed successfully. Redirecting you to the admin portal.'); </script>";
+
+			redirect('adminportalcont', 'refresh');
+
+		}
+
+		else{
+
+			echo "<script>alert('Error. Please try again after some time.'); </script>";
+
+			redirect('adminportalcont', 'refresh');
+		}
 
 	}
 }
