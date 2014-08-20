@@ -10,7 +10,7 @@ class newpostcont extends CI_Controller{
 
 		$this->load->helper('url');
 
-		$this->load->model('newpostmodel');
+	
 	}
 
 	public function index(){
@@ -18,7 +18,7 @@ class newpostcont extends CI_Controller{
 		$this->write();
 	}
 
-	public function write(){
+	private function write(){
 
 		$this->load->helper('form');
 		$this->load->library('form_validation');
@@ -28,11 +28,12 @@ class newpostcont extends CI_Controller{
 		$this->load->view('templates/footer.html');
 	}
 
-	public function addpost(){
-		$this->load->model('newpostmodel');
-		
-		echo 'We will talk with the model now.';
 
+	private function addpost(){
+
+
+		echo 'We will talk with the model now.';
+		$this->load->model('newpostmodel');
 		$this->newpostmodel->addNewPost();
 
 	}

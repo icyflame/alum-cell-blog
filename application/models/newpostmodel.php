@@ -19,6 +19,7 @@ class newpostmodel extends CI_Model{
 		var_dump($_POST);
 
 		echo '<br/><br/>';
+		date_default_timezone_set('Asia/Calcutta');
 
 		$finaldata = array_merge($_POST, array("time"=>date('H:i jS F, Y')));
 
