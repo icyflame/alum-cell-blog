@@ -11,19 +11,23 @@
 
 <body>
 
-	<?php foreach($data as $post): ?>
+	<div style="font-size: 20px; ">
 
-	<h2> <?= $post['posttitle']; ?> </h2>
+		<?php foreach($data as $post): ?>
 
-	<h4> Posted by <?= $post['screenname'] ?> at <?= $post['time'] ?> </h4>
+		<h2> <?= $post['posttitle']; ?> </h2>
 
-	<p> <?= auto_link($post['postcontent']); ?> </p>
+		<h4> Posted by <?= $post['screenname'] ?> at <?= $post['time'] ?> </h4>
 
-	<hr/>
+		<p> <?= auto_link($post['postcontent']); ?> </p>
 
-<?php endforeach; ?>
+		<hr/>
+
+	<?php endforeach; ?>
 
 </table>
+
+</div>
 
 <!-- Modals -->
 
