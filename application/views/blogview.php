@@ -3,7 +3,16 @@
 <head>
 
 	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
+
+	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bootstrap.min.css'; ?>">
+
+	<link rel="stylesheet" href="<?php echo base_url().'font-awesome/font-awesome-3.2.1/css/font-awesome.min.css'; ?>">
+	<link rel="stylesheet" href="<?php echo base_url().'font-awesome/font-awesome-4.1.0/css/font-awesome.min.css'; ?>">
+
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+
 	<link rel="stylesheet" href="<?php echo base_url().'bootstrap/bodymargin.css'; ?>">
+
 	<script src="<?php echo base_url().'bootstrap/jquery-1.10.2.js'; ?>"></script>
 	<script src="<?php echo base_url().'bootstrap/bootstrap.min.js'; ?>"></script>
 
@@ -47,7 +56,11 @@
 				<p> Your account has been successfully registered. You can start posting!
 				</p>
 
-				<img src="<?php echo base_url().'images/agendacat.png'; ?>" height="400" width="400"/>
+				<div style="font-size: 72px;">
+
+					<i class="icon-ok icon-5x"></i>
+
+				</div>
 
 			</div>
 
@@ -74,6 +87,12 @@
 				<p> Your account could not be created. We are probably working on the issue furiously, please try again after some time.
 				</p>
 
+				<div style="font-size: 72px;">
+
+					<i class="fa fa-thumbs-down fa-5x"></i>
+
+				</div>
+
 			</div>
 
 			<div class="modal-footer">
@@ -98,6 +117,12 @@
 
 				<p> Your post was added to the Database. One of our administrators will soon verify it. Once verified, your post will go online.
 				</p>
+
+				<div style="font-size: 72px;">
+
+					<i class="fa fa-thumbs-up fa-5x"></i>
+
+				</div>
 
 			</div>
 
