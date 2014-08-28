@@ -44,7 +44,11 @@ Custom Constants
 
 // $Var = POSTS_LOCATION
 
-define('POSTS_LOCATION', getenv("DOCUMENT_ROOT") . "/blog-draft/posts/");
+// define('POSTS_LOCATION', getenv("DOCUMENT_ROOT") . "/blog-draft/posts/");
+
+// define('POSTS_LOCATION', "home/a7739511/");
+
+define('POSTS_LOCATION', APPPATH . "posts/");
 
 
 /* End of file constants.php */
