@@ -21,6 +21,67 @@
 		margin-left: 10px;
 	}
 
+	.center{
+		text-align: center;
+	}
+
+	.link-icon{
+		text-decoration: none !important;
+		color: black;
+	}
+
+	.link-icon:hover{
+		color: black;
+	}
+
+	.link-icon .icon-html{
+		color: black;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
+	.link-icon .icon-html:hover{
+		color: #e34f26;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
+	.link-icon .icon-css{
+		color: black;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
+	.link-icon .icon-css:hover{
+		color: #e34f26;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
+	.link-icon .icon-github{
+		color: black;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
+	.link-icon .icon-github:hover{
+		color: #4183c4;
+		-webkit-transition: all 0.5s ease-out;
+		-moz-transition: all 0.5s ease-out;
+		-o-transition: all 0.5s ease-out;
+		transition: all 0.5s ease-out;
+	}
+
 	.nav-item{
 
 		margin-right: 10px;
@@ -59,11 +120,15 @@
 
 		<div class="row nav-row" style="text-align: center; margin-top: 10px; margin-bottom: 10px; font-size: 30px; ">
 
-			<a href="#" class="nav-item">About</a>
+			<!-- <a href="#about" class="nav-item">About</a> -->
 
-			<a target="_blank" href="http://github.com/icyflame/alum-cell-blog/archive/2.1.0.zip" class="nav-item">Download</a>
+			<a target="_blank" href="http://github.com/icyflame/create-together" class="nav-item">Fork on Github</a>
 
-			<a target="_blank" href="http://icyflame.github.io" class="nav-item">Contact</a>
+			<a target="_blank" href="http://github.com/icyflame/create-together/archive/2.1.0.zip" class="nav-item">Download</a>
+
+			<a target="_blank" href="mailto:kannan.siddharth12@gmail.com" class="nav-item">Contact</a>
+
+			<a target="_blank" href="http://icyflame.github.io" class="nav-item">About Me</a>
 
 		</div>
 
@@ -86,24 +151,94 @@
 				Blogging framework, for the control freak in you!
 			</h2>
 
+			<h2 class="text-muted">
+				Currently v2.1.0
+			</h2>
+
+
+		</div>
+
+		<div class="about">
+
+		</div>
+
+		<div class="visible-lg">
+
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+
 		</div>
 
 		<br/>
-		<br/>
-		<br/>
-		<br/>
+
 
 		<div class="row" style="margin-top: 10px; margin-bottom: 10px; text-align: center; ">
 		</div>
 
 		<div class="row">
 
-			<div class="col-md-4">				
+			<div class="col-md-4">
+				<h1 class="center">
+					<i class="fa fa-question" style="font-size: 80px; ">
+					</i>
+					<br/>
+					Why
+				</h1>
+
+				<h3 class="center">
+					For any content sharing platform, two things are important. A transparent setup for the user, and the people who develop the content, so that they feel free to write what they want. And the other thing, for the administrators, is to ensure that content published is within the acceptable limits of that platform and context, whatever they may be. The content must not be editable, by anyone, except the contributor himself/herself. And no one can publish content, without the administrators having vetted it.
+				</h3>
 			</div>
 			<div class="col-md-4">
+				<h1 class="center">
+
+					<a href="http://html5test.com/" class="link-icon" target="_blank">
+						<i class="fa fa-html5 icon-html" style="font-size: 80px; ">
+						</i>
+					</a>
+
+					<a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets" class="link-icon" target="_blank">
+						<i class="fa fa-css3 icon-css" style="font-size: 80px; ">
+						</i>
+					</a>
+					<br/>
+					How?
+
+				</h1>
+
+				<h3 class="center">
+					Written in PHP, using the <a target="_blank" href="http://ellislab.com/codeigniter">CodeIgniter</a> framework, based on MVC architecture, the application is scalable. Further, the frequent usage of <a target="_blank" href="http://getbootstrap.com">Bootstrap</a> CSS and JS, ensures that you get a great application, no matter which device you are viewing it on. Also, if you want to change the frontend of the application, painlessly change the view files, and without changing anything else, you will get an awesome-r blog in minutes!
+				</h3>
 			</div>
 			<div class="col-md-4">
+				<h1 class="center">
+					<a href="http://github.com/" class="link-icon" target="_blank">
+						<i class="fa fa-github icon-github" style="font-size: 80px; ">
+						</i>
+					</a>
+					<br/>
+					Open Source
+
+				</h1>
+
+				<h3 class="center">
+
+					The Create Together framework, has been open sourced under the <a target="_blank" href="https://github.com/icyflame/create-together/blob/master/license.md">MIT License</a>. Fork this <a target="_blank" href="http://github.com/icyflame/create-together/">project on GitHub</a> and start creating your own spin-offs! And do send them over to me, so I can include them on this project page.
+
+				</h3>
 			</div>
+
+		</div>
+
+		<hr/>
+
+		<div class="center">
+
+			<p>Created by Siddharth Kannan.</p>
+			<p>Hosted with <i class="fa fa-heart"></i> on <a href="https://github.com/icyflame/create-together/tree/gh-pages">GitHub</a></p>
+			<p>This page is licensed under <a target="_blank" href="https://github.com/icyflame/create-together/blob/master/license.md">MIT</a></p>
 
 		</div>
 
